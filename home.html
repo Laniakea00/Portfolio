@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laniakea Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <h1>Laniakea</h1>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto" id="navMenu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html" tabindex="0">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hobbies.html" tabindex="0">Hobbies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" tabindex="0">Contact-me</a>
+                        </li>
+                        <li>
+                            <button id="changeColorBtn" class="btn btn-outline-light mt-2" style="margin-left: 30px;" tabindex="0">Change background color</button>
+                        </li>
+                        <li>
+                            <button id="loginPopupBtn" class="btn btn-outline-light mt-2" style="margin-left: 30px;" tabindex="0">Login</button>
+                            <div id="loginPopup" class="popup-form" style="display: none;">
+                                <div class="popup-content">
+                                    <span id="closeLoginPopup" class="close-btn">&times;</span>
+                                    <form id="loginForm">
+                                        <label for="username" style="color: black;">Enter Username: </label>
+                                        <input type="text" id="username" style="margin-top: 10px;" required>
+                                        <button type="submit" class="btn btn-primary mt-2">Login</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>    
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    
+
+    <div class="content">
+        <div class="first_page">
+            <div class="box">
+                <div class="text1">
+                    <div class="text_content">
+                        <section class="start">
+                            <input type="text" id="name-input" placeholder="Hello, what is your name?">
+                            <button id="greet-btn" class="btn btn-outline-light mt-0">Send</button>
+                            <audio id="notificationSound" src="sounds/mixkit-arcade-game-jump-coin-216.wav" preload="auto"></audio>
+                            <h1 id="greeting"></h1> 
+                        </section>
+                        <a href="contact.html" class="btn btn-outline-light mt-4" style="width: 170px;">
+                            <b>CONTACT ME</b>
+                        </a>
+                    </div>
+                </div>
+                <img src="Images/photo_2024-09-21_17-19-16.jpg" alt="Alan's Photo">
+            </div>
+        </div>
+        <div class="second_page">
+            <div class="box2">
+                <div class="about">
+                    <h1>About me</h1>
+                </div>
+                <div class="text">
+                    <p>As I said before, my name is Alan Berikzhan and I'm a student of Astana IT University (AITU).
+                        Now I'm 18 y.o., and I want to become a senior Data Scientist in the future. I want to work in
+                        companies such as Yandex, Google, OpenAI, Amazon, etc. That's one of my goals.<br> I was involved in sports for quite a long time (about 7-8 years), but I got injured in one of the competitions and had to quit sports.<br>
+                    </p>
+                </div>
+                <h2>But more about this in the Hobbies section.</h2>
+                <a href="hobbies.html" class="btn btn-outline-light mt-3" style="width: 170px;">
+                    MY HOBBIES
+                </a>
+            </div>
+        </div>
+    </div>
+    
+        
+    <script src="scripts/home.js"></script>
+</body>
+
+</html>

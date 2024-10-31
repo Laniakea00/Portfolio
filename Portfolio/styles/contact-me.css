@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    width: 1440 px;
+    height: 100%;
+    font-family: 'Sen', sans-serif;
+    background-color: #231414;
+}
+
+header {
+    color: rgb(255,255,255);
+    margin-top: 25px;
+    margin-left: 100px;
+    height: 60px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    margin-right: 150px;
+}
+
+nav a {
+    color: rgb(255,255,255); 
+    text-decoration: none; 
+    margin-left: 20px; 
+    font-weight: 500;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 6px;
+}
+
+
+.contact-container{
+    margin: 0 auto;
+}
+
+.contact-header{
+    text-align: center;
+    color:white;
+}
+
+.contact-header p{
+    text-align: center;
+    color:white;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.contact-container h2{
+    margin-top: 100px;
+    padding: 0;
+    width: 768px;
+    margin-left: 350px;
+}
+
+.contact-container h1{
+    width: 768px;
+    margin-left: 350px;
+}
+
+.contact-container p{
+    width: 768px;
+    margin-left: 360px;
+    font-size: 16px;
+}
+
+.contact-rect {
+    width: 768px;
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    margin: 0 auto; 
+    box-shadow: 0 0 10px rgba(26, 18, 18, 0.1);
+}
+
+.contact-rect .purple-rect {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.contact-rect .purple-rect > div {
+    width: 48%; 
+    padding: 10px;
+}
+
+.contact-rect .purple-rect > div:first-child {
+    border-right: 1px solid #794BB2; 
+    
+}
+
+.contact-rect p {
+    margin-left: 20px; 
+}
+
+.vert-line{
+    color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #794BB2;
+    max-width: 300px;
+}
+
+.p-layout {
+    color: rgba(0, 0, 0, 0.6);
+    margin: 5px;
+}
+
+.social-icons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons img {
+    width: 30px; 
+    height: auto; 
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0 15px;
+}
