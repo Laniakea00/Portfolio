@@ -12,6 +12,12 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <h1>Laniakea</h1>
+
+                <!-- Бургер-кнопка -->
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                    ☰
+                </button>
+
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto" id="navMenu">
                         <li class="nav-item">
@@ -87,8 +93,17 @@
                         </div>
                     </div>
 
+                    <div class="col-md-5" style="margin-left: +100px;">
+                        <div class="card mb-3" style="margin-right: +100px;">
+                            <div class="card-body">
+                                <h5>My GitHub Repositories:</h5>
+                                <ul id="repo-list" style="text-align: left;"></ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                    <h1 style="margin-top: 20px;">Leave your email and I'll write to you ;)</h1>
+                    <h1 style="margin-top: 20px;">Leave your email and I'll write you later ;)</h1>
                     <form id="emailForm" class="mt-3">
                         <label for="email" style="color: white;">Email:</label>
                         <input type="email" id="email" name="email" required>

@@ -50,6 +50,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.collapse');
+
+    // Добавляем обработчик на бургер-кнопку
+    navbarToggler.addEventListener('click', () => {
+        navbarCollapse.classList.toggle('active');
+    });
+
     window.addEventListener('click', function(event) {
         if (event.target == loginPopup) {
             loginPopup.style.display = 'none';
@@ -85,89 +93,118 @@ document.addEventListener('DOMContentLoaded', function() {
     const hobbies = [
         { 
             type: 'sports', 
-            name: 'Дзюдо', 
+            name: 'Judo', 
             image: 'Images/Judo.jpeg', 
-            description: 'Занимался дзюдо, что помогает мне оставаться дисциплинированным и в хорошей форме.' 
+            description: 'Practiced judo, which helps me stay disciplined and in good shape.' 
         },
         { 
             type: 'sports', 
-            name: 'Плавание', 
+            name: 'Swimming', 
             image: 'Images/swimming.jpg', 
-            description: 'Люблю плавать для поддержания здоровья и снятия стресса.' 
+            description: 'I enjoy swimming to stay healthy and relieve stress.' 
         },
         { 
             type: 'sports', 
-            name: 'Рукопашный бой', 
+            name: 'Martial Arts', 
             image: 'Images/martial-arts.jpg', 
-            description: 'Практиковал рукопашный бой, что дает уверенность и умение защищаться.' 
+            description: 'Practiced martial arts, which gives me confidence and self-defense skills.' 
         },
         { 
             type: 'sports', 
-            name: 'Волейбол', 
+            name: 'Volleyball', 
             image: 'Images/volleyball.jpeg', 
-            description: 'Играю в волейбол с друзьями для отдыха и командного духа.' 
+            description: 'I play volleyball with friends for relaxation and team spirit.' 
         },
         { 
             type: 'programming', 
-            name: 'Программирование', 
+            name: 'Programming', 
             image: 'Images/coding.jpg', 
-            description: 'Люблю программировать и разбираться в коде часами.' 
+            description: 'I love programming and can spend hours working with code.' 
         },
         { 
             type: 'entertainment', 
-            name: 'Игры', 
+            name: 'Gaming', 
             image: 'Images/genshin.jpg', 
-            description: 'Иногда играю в видеоигры для отдыха и развлечения.' 
+            description: 'I sometimes play video games for relaxation and entertainment.' 
         },
         { 
             type: 'entertainment', 
-            name: 'Аниме и фильмы', 
+            name: 'Anime and Movies', 
             image: 'Images/code-geass.png', 
-            description: 'Смотрю аниме, фильмы и сериалы для вдохновения и отдыха.' 
+            description: 'I watch anime, movies, and series for inspiration and relaxation.' 
         },
         { 
             type: 'study', 
-            name: 'Изучение японского', 
+            name: 'Learning Japanese', 
             image: 'Images/japanese.png', 
-            description: 'Постепенно изучаю японский язык, так как он меня привлекает.' 
+            description: 'I am gradually learning Japanese, as it fascinates me.' 
         },
         { 
             type: 'study', 
-            name: 'Чтение книг', 
+            name: 'Reading Books', 
             image: 'Images/reading.png', 
-            description: 'Люблю художественную литературу и манги, читаю почти каждый день.' 
+            description: 'I love fiction and manga, and read almost every day.' 
         },
         { 
             type: 'music', 
-            name: 'Фортепиано', 
+            name: 'Piano', 
             image: 'Images/piano.png', 
-            description: 'Учусь играть на фортепиано, вдохновившись Лунной сонатой из аниме.' 
+            description: 'I am learning to play the piano, inspired by the Moonlight Sonata from an anime.'
+        },
+        { 
+            type: 'travel', 
+            name: 'Traveling', 
+            image: 'Images/travel.png', 
+            description: 'I love exploring new places, experiencing different cultures, and meeting new people.' 
+        },
+        { 
+            type: 'art', 
+            name: 'Drawing', 
+            image: 'Images/drawing.jpg', 
+            description: 'I enjoy drawing and sketching, which helps me express my creativity and relax.' 
         }
+        
+        
     ];
-        function displayHobbies(filteredHobbies) {
-            hobbyList.innerHTML = ''; 
-            filteredHobbies.forEach(hobby => {
-                const hobbyCard = document.createElement('div');
-                hobbyCard.classList.add('hobby-card');
-                
-                const hobbyImage = document.createElement('img');
-                hobbyImage.src = hobby.image;
-                hobbyImage.alt = hobby.name;
-                hobbyImage.style.width = '200px'; 
-                
-                const hobbyTitle = document.createElement('h3');
-                hobbyTitle.textContent = hobby.name;
-                
-                const hobbyDescription = document.createElement('p');
-                hobbyDescription.textContent = hobby.description;
-                
-                hobbyCard.appendChild(hobbyImage);
-                hobbyCard.appendChild(hobbyTitle);
-                hobbyCard.appendChild(hobbyDescription);
-                
-                hobbyList.appendChild(hobbyCard);
-            });
-        }
+
+    function displayHobbies(filteredHobbies) {
+        hobbyList.innerHTML = ''; 
+        const row = document.createElement('div');
+        row.classList.add('row'); // Wrap all cards in a row
+    
+        filteredHobbies.forEach(hobby => {
+            const col = document.createElement('div');
+            col.classList.add('col-md-4', 'mb-4'); // Each card takes 1/3 of the row
+    
+            const hobbyCard = document.createElement('div');
+            hobbyCard.classList.add('card', 'hobby-card', 'text-center');
+    
+            const hobbyImage = document.createElement('img');
+            hobbyImage.src = hobby.image;
+            hobbyImage.alt = hobby.name;
+            hobbyImage.classList.add('card-img-top');
+    
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+    
+            const hobbyTitle = document.createElement('h5');
+            hobbyTitle.classList.add('card-title');
+            hobbyTitle.textContent = hobby.name;
+    
+            const hobbyDescription = document.createElement('p');
+            hobbyDescription.classList.add('card-text');
+            hobbyDescription.textContent = hobby.description;
+    
+            cardBody.appendChild(hobbyTitle);
+            cardBody.appendChild(hobbyDescription);
+            hobbyCard.appendChild(hobbyImage);
+            hobbyCard.appendChild(cardBody);
+            col.appendChild(hobbyCard);
+            row.appendChild(col); 
+        });
+        hobbyList.appendChild(row); 
+    }
+    
     
         applyFilterBtn.addEventListener('click', () => {
             const selectedType = hobbyTypeSelect.value;

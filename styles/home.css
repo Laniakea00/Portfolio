@@ -28,6 +28,19 @@ nav a:hover {
     text-decoration-thickness: 6px;
 }
 
+.navbar-toggler {
+    display: none; /* По умолчанию скрываем бургер-кнопку */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.collapse {
+    display: none;
+}
+
 .popup-form {
     position: fixed;
     display: flex;
@@ -56,7 +69,6 @@ nav a:hover {
     cursor: pointer;
     font-size: 18px;
 }
-
 
 h1 {
     font-size: 48px;
@@ -167,4 +179,60 @@ p{
 .btn-outline-light:hover {
     background-color: white;
     color: black;
+}
+
+/* ====== Медиазапросы ====== */
+
+/* Мобильные устройства (ширина меньше 768px) */
+@media (max-width: 767px) {
+    .navbar-toggler {
+        display: block; 
+    }
+
+    .collapse {
+        display: none; 
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .collapse.active {
+        display: flex; 
+    }
+
+    .nav-item {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+/* Планшеты (ширина от 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 24px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    section {
+        margin: 10px 0;
+    }
+}
+
+/* Десктопы (ширина больше 1024px) */
+@media (min-width: 1025px) {
+    header h1 {
+        font-size: 36px;
+    }
+    nav ul li {
+        margin: 0 20px;
+    }
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }

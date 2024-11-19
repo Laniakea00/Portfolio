@@ -27,6 +27,14 @@ loginPopupBtn.addEventListener('click', function() {
     }
 });
 
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('.collapse');
+
+// Добавляем обработчик на бургер-кнопку
+navbarToggler.addEventListener('click', () => {
+    navbarCollapse.classList.toggle('active');
+});
+
 closeLoginPopup.addEventListener('click', function() {
     loginPopup.style.display = 'none';
 });

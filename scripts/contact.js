@@ -54,6 +54,13 @@ window.addEventListener('click', function(event) {
     }
 });
 
+const navbarToggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('.collapse');
+
+// Добавляем обработчик на бургер-кнопку
+navbarToggler.addEventListener('click', () => {
+    navbarCollapse.classList.toggle('active');
+});
 
 // Код для обработки событий на клавиатуре
 const navItems = document.querySelectorAll('#navMenu .nav-item a, #navMenu button');
@@ -107,3 +114,17 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
         alert('Form has been sended');
     }
 });
+
+
+// Интеграция внешнего API
+fetch('https://api.github.com/users/Laniakea00/repos')
+    .then(response => response.json())
+    .then(data => {
+        const repoList = document.getElementById('repo-list');
+        data.forEach(repo => {
+            const listItem = document.createElement('li');
+            listItem.textContent = repo.name;
+            repoList.appendChild(listItem);
+        });
+    })
+    .catch(error => console.error('Error fetching repos:', error));
