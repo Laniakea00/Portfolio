@@ -45,7 +45,7 @@ Bootstrap: Used for additional styling and layout adjustments.
 JavaScript: To implement interactive elements like greeting messages, local storage handling, keyboard navigation, and email validation.
 
 How to Run the Project
-Clone the Repository: git clone https://github.com/your-username/laniakea-portfolio.git
+Clone the Repository: git clone https://github.com/Laniakea/Portfolio.git
 
 Future Plans
 Add more dynamic features to the hobbies and contact pages.
